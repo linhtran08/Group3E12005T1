@@ -679,24 +679,22 @@
     <!-- Main Js File -->
     <script src="js/script.js"></script>
     <script>
-    $(document).ready(function () {
-        $(window).on('load',function(){
-            if(sessionStorage.getItem('shoppingCart')){
-                let cart = JSON.parse(sessionStorage.getItem('shoppingCart'));
-                if(cart.length==0){
+		$(window).on('load',function(){
+			if(sessionStorage.getItem('shoppingCart')){
+				let cart = JSON.parse(sessionStorage.getItem('shoppingCart'));
+				if(cart.length==0){
+					$('.page-wrapper').hide();
+					window.location.href = 'all-products.html';
+				}
+			}
+			else{
 				$('.page-wrapper').hide();
-                window.location.href = 'all-products.html';
-                }
-            }
-            else{
-				$('.page-wrapper').hide();
-                window.location.href = 'all-products.html';
+				window.location.href = 'all-products.html';
 			}
 			setTimeout(function(){
 				sessionStorage.removeItem('shoppingCart');
 			},300)
-        });
-    });
+		});
 	</script>
 
 

@@ -723,28 +723,28 @@ Essential Scripts
 <!-- Main Js File -->
 <script src="js/script.js"></script>
 <script>
+	let coutTime = 5;
+	function timeCount(){
+		coutTime--;
+		$('.timeCount').html('Return to shop ( ' + coutTime +' )');
+		if(coutTime===0){
+			window.location.href='all-products.html';
+		}
+	}
+	$(window).on('load',function(){
+		if(sessionStorage.getItem('shoppingCart')){
+			let cart = JSON.parse(sessionStorage.getItem('shoppingCart'));
+			if(cart.length==0){
+				$('#alertModal').modal('show');
+				setInterval(timeCount,1000);
+			}
+		}
+		else{
+			$('#alertModal').modal('show');
+			setInterval(timeCount,1000);
+		}
+	});
     $(document).ready(function () {
-        let coutTime = 5;
-        function timeCount(){
-            coutTime--;
-            $('.timeCount').html('Return to shop ( ' + coutTime +' )');
-            if(coutTime===0){
-                window.location.href='all-products.html';
-            }
-        };
-        $(window).on('load',function(){
-            if(sessionStorage.getItem('shoppingCart')){
-                let cart = JSON.parse(sessionStorage.getItem('shoppingCart'));
-                if(cart.length==0){
-                $('#alertModal').modal('show');
-                setInterval(timeCount,1000);
-                }
-            }
-            else{
-                $('#alertModal').modal('show');
-                setInterval(timeCount,1000);
-            }
-        });
         $(document).on('click',function(){
             if(sessionStorage.getItem('shoppingCart')){
                 let cart = JSON.parse(sessionStorage.getItem('shoppingCart'));

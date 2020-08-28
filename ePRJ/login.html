@@ -150,7 +150,7 @@ Essential Scripts
                     let userlogin = new Userlogin(userName, password,);
                     loadCart();
                     for (user in users) {
-                        if(users[user].userName===userlogin.userName){
+                        if(users[user].userName===userlogin.userName && users[user].password===userlogin.password){
                             sessionStorage.setItem("logged", JSON.stringify(userlogin));
                             $('#alertModal').modal('show');
                             setInterval(timeCount,1000);

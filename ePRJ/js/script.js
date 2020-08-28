@@ -540,18 +540,21 @@
   /* -------------------------- end shopping cart js -------------------------- */
 
 // Login module
-  $(document).ready(function (){
     $(window).on('load',function (){
       if(sessionStorage.getItem('logged')){
         let loged = JSON.parse(sessionStorage.getItem('logged'));
         $('.openG').before('<div class="login">' +
-            '<span> '+ loged.userName + ' </span>' +
-            '<i class="fas fa-user fa-lg" style="margin-right: 3px;"></i>' +
+            '<span style="margin-right: 3px;"> '+ loged.userName + '  </span>' +
             '<a href="logout.html" id="logout" class="text-primary"> - Logout</a>' +
             '</div>');
       }
-    })
-  });
+      else{
+        $('.openG').before('<div class="login">'+
+            '<i class="fas fa-user fa-lg" style="margin-right: 3px;"></i>' +
+            '<a href="login.html" id="logout" class="text-primary"> - Login</a>' +
+            '</div>');
+      }
+    });
 
 })(jQuery);
 $(document).ready(function(){

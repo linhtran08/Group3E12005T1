@@ -58,24 +58,13 @@ Essential Scripts
 <!-- Main Js File -->
 <script src="js/script.js"></script>
 <script>
-    let countTime = 5;
-    function timeCount() {
-        countTime--;
-        $('.timeCount').html('Shop Now ( ' + countTime + ' )');
-        if (countTime === 0) {
-            window.location.href = 'login.html';
-        }
-    }
-    $(document).ready(function () {
        if(sessionStorage.getItem('logged')){
            sessionStorage.removeItem('logged');
-           $('#alertModal').modal('show');
-           setTimeout(timeCount,1000);
+            window.location.href = 'index.html'
        }
        else {
            window.location.href='login.html'
        }
-    })
 </script>
 </body>
 </html>

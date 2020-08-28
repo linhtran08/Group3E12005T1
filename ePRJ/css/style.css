@@ -2652,17 +2652,8 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
 .login{
   cursor: pointer;
 }
-.login span{
-  display: none;
-}
-.login:hover i{
-  display: none;
-}
-.login:hover span{
-  display: block;
-}
 @media (max-width : 768px ){
-  .openG{
+  .openG,.login{
     margin-top: 20px;
     justify-content: center;
   }
